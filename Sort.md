@@ -64,3 +64,69 @@
     }
 
 为了处理方便，我直接使用了c++里的vector.
+
+## Fast Sort
+快速排序的算法很好理解。但实现上还是有点小麻烦，有待改进。
+
+        #include <iostream>
+        #include <vector>
+
+        using namespace std;
+
+        void FastSort(int start, int end, vector<int> &A)
+        {
+            if (end <= start + 1) //递归结束条件
+            {
+                return;
+            }
+
+            int low = start, high = end, counts = 1, target = A[start];
+            A[start] = -1;
+
+            while (low != high)
+            {
+                if (counts % 2 == 1)
+                {
+                    while (A[high] > target)
+                    {
+                        high--;
+                    }
+                    if (A[high] != -1)
+                    {
+                        A[low] = A[high];
+                        A[high] = -1;
+                        low++;
+                    }
+                }
+                else 
+                {
+                    while (A[low] != -1 && A[low] < target)
+                    {
+                        low++;
+                    }
+                    if (A[low] != -1){
+                        A[high] = A[low];
+                        A[low] = -1;
+                        high--;
+                    }
+                }
+                counts++;
+            }
+            A[low] = target;
+            //开始递归
+            FastSort(start, low - 1, A);
+            FastSort(high + 1, end, A);
+        }
+
+        int main(int argc, char const *argv[])
+        {
+            vector<int> A = {11, 12, 1, 5, 15, 3, 4, 10, 7, 2, 16, 9, 8, 14, 13, 6};
+            FastSort(0, 15, A);
+
+            for (int i = 0; i < A.size(); i++){
+                cout << A[i] << endl;
+            }
+            system("pause");
+            return 0;
+        }
+
