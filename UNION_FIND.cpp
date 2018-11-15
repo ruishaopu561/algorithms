@@ -1,5 +1,5 @@
-# 并查集的简单实现
-```c++
+// 并查集的简单实现
+
 #include <iostream>
 
 using namespace std;
@@ -39,4 +39,3 @@ void Union(node *x, node *y) //union two sets into one set
     }
   }
 };
-```
