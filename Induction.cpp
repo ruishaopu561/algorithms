@@ -1,5 +1,4 @@
-## EXPREC
-```cpp
+// EXPREC
 int power(int x, int n)
 {
     int y = 1;
@@ -18,9 +17,8 @@ int power(int x, int n)
         return y;
     }
 }
-```
-## EXP
-```cpp
+
+// EXP
 void toBinary(vector<int> &d, int n)
 {
     while (n != 0)
@@ -47,12 +45,11 @@ int power(int x, int n)
     }
     return y;
 }
-```
-## HORNER
-即秦九韶算法，不再赘述。
-## PERMUTATIONS1
-print函数，无关紧要
-```cpp
+
+// HORNER(即秦九韶算法，不再赘述。)
+
+// PERMUTATIONS1
+// print函数，无关紧要
 void print(vector<int> vec)
 {
     int len = vec.size();
@@ -62,9 +59,8 @@ void print(vector<int> vec)
     }
     cout << endl;
 }
-```
-最常见的打印全排列的方式
-```cpp
+                
+// 最常见的打印全排列的方式
 void perm(int m, int n, vector<int> vec)
 {
     if (m == n)
@@ -100,9 +96,8 @@ int main()
     perm(1, n, vec);
     //cout << count << endl;
 }
-```
-## PERMUTATIONS2
-```cpp
+
+// PERMUTATIONS2
 void print(vector<int> vec)
 {
     int len = vec.size();
@@ -147,9 +142,8 @@ int main()
     perm(n, vec);
     cout << count << endl;
 }
-```
-## MAJORITY
-```cpp
+
+// MAJORITY
 #include <iostream>
 #include <vector>
 
@@ -213,4 +207,3 @@ int main()
         cout << "none" << endl;
     }
 }
-```

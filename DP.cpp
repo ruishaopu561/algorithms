@@ -1,6 +1,6 @@
-## Fibonacci
-非动态规划实现：
-```c++
+// Fibonacci
+// 非动态规划实现：
+
 int fibonacci(int n)
 {
     if (n <= 2)
@@ -12,9 +12,8 @@ int fibonacci(int n)
         return fibonacci(n - 1) + fibonacci(n - 2);
     }
 }
-```
-动态规划实现：
-```c++
+
+// 动态规划实现：
 void f(vector<int> &a, int n)
 {
     for (int i = 0; i < n; i++)
@@ -29,6 +28,5 @@ void f(vector<int> &a, int n)
         }
     }
 }
-```
-事实证明效率差距不是一般的大。
-## 
+
+// 事实证明效率差距不是一般的大。
